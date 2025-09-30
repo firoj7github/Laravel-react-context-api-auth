@@ -43,7 +43,6 @@ composer run dev
 
 
 ## কোথায় কোথায় কি setup করতে হবে
----
 
 ### Vite Configuration (vite.config.js)
 - @vitejs/plugin-react দিয়ে React JSX support যোগ করা হয়।
