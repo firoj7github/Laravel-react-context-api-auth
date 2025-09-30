@@ -41,9 +41,8 @@ composer run dev
 
 ```
 
-## Short Description (Point to Point)
 
-কোথায় কোথায় কি setup করতে হবে
+## কোথায় কোথায় কি setup করতে হবে
 ---
 
 ### Vite Configuration (vite.config.js)
