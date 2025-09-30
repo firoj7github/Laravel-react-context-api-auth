@@ -46,24 +46,24 @@ composer run dev
 কোথায় কোথায় কি setup করতে হবে
 ---
 
-## Vite Configuration (vite.config.js)
+### Vite Configuration (vite.config.js)
 - @vitejs/plugin-react দিয়ে React JSX support যোগ করা হয়।
 - use this code
 
-## React Entry Point (resources/js/app.jsx)
+### React Entry Point (resources/js/app.jsx)
 - createRoot দিয়ে React root element তৈরি করা হয়।
 - BrowserRouter দিয়ে routing enable করা হয়।
 - Main App component render করা হয়।
 - use this code copy paste with same file name
 
-## Main App Component (resources/js/components/App.jsx)
+### Main App Component (resources/js/components/App.jsx)
 - Page routing setup করে Routes এবং Route ব্যবহার করে।
 - use this code copy paste with same file name
 
-## Welcome Blade পরিবর্তন (resources/views/welcome.blade.php)
+### Welcome Blade পরিবর্তন (resources/views/welcome.blade.php)
 - use this code copy paste with same file name
 
-## Add catch-all route for React
+### Add catch-all route for React ( web.php )
 - /{any} → সব URL route catch করবে।
 ```bash
 Route::get('/{any}', function () {
