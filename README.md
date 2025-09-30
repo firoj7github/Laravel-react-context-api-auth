@@ -27,7 +27,7 @@ cd laravel-react-context-api-auth
 
 # Laravel Breeze ইনস্টল করুন
 composer require laravel/breeze --dev
-php artisan breeze:install react
+php artisan breeze:install blade
 
 # React এবং প্রয়োজনীয় প্যাকেজ ইনস্টল করুন
 npm install react react-dom react-router-dom
