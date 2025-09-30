@@ -1,6 +1,6 @@
 # 🚀 Laravel + React Project Setup
 
-এই প্রজেক্টে **Laravel 10** এবং **React 18** ব্যবহার করা হয়েছে। নিচের ধাপগুলো অনুসরণ করে সহজে লোকাল মেশিনে রান করতে পারবেন।  
+এই প্রজেক্টে **Laravel 12** এবং **React 19** ব্যবহার করা হয়েছে। নিচের ধাপগুলো অনুসরণ করে সহজে লোকাল মেশিনে রান করতে পারবেন।  
 
 ---
 
@@ -36,6 +36,37 @@ npm install @vitejs/plugin-react
 # বাকি ডিপেন্ডেন্সি ইনস্টল করুন
 npm install
 
+# প্রজেক্ট রান করুন
+composer run dev
+
 ```
 
-# বাকি ডিপেন্ডেন্সি ইনস্টল করুন
+## Short Description (Point to Point)
+
+কোথায় কোথায় কি setup করতে হবে
+---
+
+## Vite Configuration (vite.config.js)
+- @vitejs/plugin-react দিয়ে React JSX support যোগ করা হয়।
+- use this code
+
+## React Entry Point (resources/js/app.jsx)
+- createRoot দিয়ে React root element তৈরি করা হয়।
+- BrowserRouter দিয়ে routing enable করা হয়।
+- Main App component render করা হয়।
+- use this code copy paste with same file name
+
+## Main App Component (resources/js/components/App.jsx)
+- Page routing setup করে Routes এবং Route ব্যবহার করে।
+- use this code copy paste with same file name
+
+## Welcome Blade পরিবর্তন (resources/views/welcome.blade.php)
+- use this code copy paste with same file name
+
+## Add catch-all route for React
+- /{any} → সব URL route catch করবে।
+```bash
+Route::get('/{any}', function () {
+    return view('welcome'); // React root view
+})->where('any', '.*');
+```
