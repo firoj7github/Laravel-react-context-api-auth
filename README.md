@@ -36,6 +36,6 @@ npm install @vitejs/plugin-react
 # বাকি ডিপেন্ডেন্সি ইনস্টল করুন
 npm install
 
----
+```
 
 # বাকি ডিপেন্ডেন্সি ইনস্টল করুন
