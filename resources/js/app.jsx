@@ -1,7 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Login from './pages/login';
-import Login from './pages/login';
+import Login from './pages/Login';
+import About from './pages/About';
+import Navbar from './layouts/Navbar';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function App() {
@@ -14,6 +17,8 @@ export default function App() {
             <Route path="/login" element={<Login/>} />
            
         </Routes>
+
+        <ToastContainer position='top-right' autoClose={3000}></ToastContainer>
         </div>
         
     );
