@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setError(null);
       const res = await axios.post("/user/login", { email, password });
+      console.log(res);
       setUser(res.data.user);
       localStorage.setItem("token", res.data.token);
     } catch (err) {
@@ -19,9 +20,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, error, login }}> 
+    
+    <AuthContext.Provider value={{ user, login, error}}>
       {children}
     </AuthContext.Provider>
+    
   );
 };
 

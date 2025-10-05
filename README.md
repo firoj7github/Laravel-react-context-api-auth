@@ -46,15 +46,15 @@ composer run dev
 
 ### Vite Configuration (vite.config.js)
 - @vitejs/plugin-react দিয়ে React JSX support যোগ করা হয়।
-- use this code
+- use this code copy paste with same file name
 
-### React Entry Point (resources/js/app.jsx)
+### React Entry Point (resources/js/main.jsx)
 - createRoot দিয়ে React root element তৈরি করা হয়।
 - BrowserRouter দিয়ে routing enable করা হয়।
 - Main App component render করা হয়।
 - use this code copy paste with same file name
 
-### Main App Component (resources/js/components/App.jsx)
+### Main App Component (resources/js/App.jsx)
 - Page routing setup করে Routes এবং Route ব্যবহার করে।
 - use this code copy paste with same file name
 

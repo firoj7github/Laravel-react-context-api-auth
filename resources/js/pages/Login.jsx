@@ -7,7 +7,6 @@ export default function Login() {
   const { login, error } = useAuth(); // Context API থেকে নিলে
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   
   const handleSubmit = (e)=>{
      e.preventDefault();
@@ -33,9 +32,10 @@ export default function Login() {
           Email
         </label>
         <input
+        
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e)=> setEmail(e.target.value)}
           required
           className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
           placeholder="Enter your email"
@@ -49,7 +49,7 @@ export default function Login() {
         <input
           type="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e)=> setPassword(e.target.value)}
           required
           className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
           placeholder="Enter your password"

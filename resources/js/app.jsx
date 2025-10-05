@@ -1,14 +1,20 @@
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import App from './components/App.jsx';
-import { AuthProvider } from './AuthContext.jsx';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/login';
+import Login from './pages/login';
 
-const app = createRoot(document.getElementById('app'));
-app.render(
-    <BrowserRouter>
-    <AuthProvider>
-        <App />
-    </AuthProvider>
-    </BrowserRouter>
-);
 
+export default function App() {
+    return (
+        <div>
+        <Navbar/>
+        <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/login" element={<Login/>} />
+           
+        </Routes>
+        </div>
+        
+    );
+}
