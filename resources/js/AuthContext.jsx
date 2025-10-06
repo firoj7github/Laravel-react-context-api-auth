@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
+  const [errors, setError] = useState(null);
 
   const login = async (email, password) => {
     try {
@@ -24,13 +24,16 @@ export const AuthProvider = ({ children }) => {
       toast.error(res.data.message); // ❌ error message backend theke asbe
     }
     } catch (err) {
-      setError(err.response?.data || { message: "Login Failed" });
+      console.log(err);
+      if(err.response?.data?.errors){
+        setError(err.response.data.errors);
+      }
     }
   };
 
   return (
     
-    <AuthContext.Provider value={{ user, login, error}}>
+    <AuthContext.Provider value={{ user, login, errors}}>
       {children}
     </AuthContext.Provider>
     

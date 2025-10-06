@@ -4,9 +4,10 @@ import { useAuth } from "../AuthContext";
 
 
 export default function Login() {
-  const { login, error } = useAuth(); // Context API থেকে নিলে
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { login, errors } = useAuth(); // Context API থেকে নিলে
+  const [ email, setEmail] = useState("");
+  const [ password, setPassword] = useState("");
+  console.log(errors);
   
   const handleSubmit = (e)=>{
      e.preventDefault();
@@ -20,12 +21,7 @@ export default function Login() {
       Login
     </h2>
 
-    {error && (
-      <div className="mb-4 rounded bg-red-100 p-2 text-sm text-red-600">
-        {error.message || "Invalid credentials"}
-      </div>
-    )}
-
+    
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label className="mb-1 block text-sm font-medium text-gray-700">
@@ -36,10 +32,12 @@ export default function Login() {
           type="email"
           value={email}
           onChange={(e)=> setEmail(e.target.value)}
-          required
           className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
           placeholder="Enter your email"
         />
+        {errors?.email &&
+         (<div className="mb-4 p-2 text-sm text-red-600">{errors.email[0]}</div>)
+        }
       </div>
 
       <div>
@@ -50,10 +48,12 @@ export default function Login() {
           type="password"
           value={password}
           onChange={(e)=> setPassword(e.target.value)}
-          required
           className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
           placeholder="Enter your password"
         />
+        {errors?.password &&
+        (<div className="mb-4 p-2 text-sm text-red-600">{errors.password[0]}</div>)
+        }
       </div>
 
       <button
