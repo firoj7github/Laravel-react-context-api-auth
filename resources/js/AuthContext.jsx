@@ -1,10 +1,13 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [errors, setError] = useState(null);
 
@@ -20,6 +23,7 @@ export const AuthProvider = ({ children }) => {
 
      // 👇 এখানে toast show করো
       toast.success(res.data.message || "Login successful");
+      navigate("/profile");
     } else {
       toast.error(res.data.message); // ❌ error message backend theke asbe
     }

@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 import About from './pages/About';
 import Navbar from './layouts/Navbar';
 import { ToastContainer } from 'react-toastify';
@@ -15,6 +16,7 @@ export default function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/profile" element={<Profile/>}/>
            
         </Routes>
 

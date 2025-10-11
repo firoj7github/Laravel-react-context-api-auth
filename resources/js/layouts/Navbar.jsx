@@ -4,9 +4,9 @@ import { useAuth } from "../AuthContext";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {user} = useAuth();
-    const [ dropdownOpen, setDropdownOpen] = useState(false);
-    const toggleDropdown = ()=> setDropdownOpen(!dropdownOpen);
+    const { user } = useAuth();
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
     return (
         <nav className="bg-white shadow-md">
@@ -65,45 +65,47 @@ const Navbar = () => {
                     <a href="#" className="text-gray-700 hover:text-blue-600">
                         Contact
                     </a>
-                    {
-                      !user ? (
+                    {!user ? (
                         <Link
-                        to="/login"
-                        className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
-                        Login
-                    </Link>
-                      ) :
-                      (
+                            to="/login"
+                            className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                        >
+                            Login
+                        </Link>
+                    ) : (
                         <div className="relative">
-            {/* Profile Icon */}
-            <button onClick={toggleDropdown} className="flex items-center space-x-2 focus:outline-none">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
-                {user.name[0]}
-              </div>
-              <span>{user.name}</span>
-            </button>
+                            {/* Profile Icon */}
+                            <button
+                                onClick={toggleDropdown}
+                                className="flex items-center space-x-2 focus:outline-none"
+                            >
+                                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
+                                    {user.name[0]}
+                                </div>
+                                <span>{user.name}</span>
+                            </button>
 
-            {/* Dropdown */}
-            <div className={`absolute right-0 mt-4 w-36 bg-white text-black rounded shadow-lg ${
-  dropdownOpen ? "block" : "hidden"
-}`}>
-              <button
-                onClick={() => alert("Go to Profile")}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-200"
-              >
-                Profile
-              </button>
-              <button
-                // onClick={handleLogout}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-200"
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-                      )
-                    }
-                    
+                            {/* Dropdown */}
+                            <div
+                                className={`absolute right-0 mt-4 w-36 bg-white text-black rounded shadow-lg ${
+                                    dropdownOpen ? "block" : "hidden"
+                                }`}
+                            >
+                                <button
+                                    onClick={() => alert("Go to Profile")}
+                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                >
+                                    Profile
+                                </button>
+                                <button
+                                    // onClick={handleLogout}
+                                    className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 
