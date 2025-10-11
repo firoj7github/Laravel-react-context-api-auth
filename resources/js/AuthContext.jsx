@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
@@ -11,6 +11,15 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [errors, setError] = useState(null);
 
+  // ✅ refresh-এর পর localStorage থেকে user লোড করো
+  
+  useEffect(()=>{
+      const userStored = JSON.parse(localStorage.getItem("user"));
+      if(userStored){
+        setUser(userStored);
+      }
+  },[])
+
   const login = async (email, password) => {
     try {
       setError(null);
@@ -19,7 +28,9 @@ export const AuthProvider = ({ children }) => {
       if (res.data.status) {
       setUser(res.data.user);
       // localStorage.setItem("token", res.data.token);
+      
       localStorage.setItem("user", JSON.stringify(res.data.user));
+      
 
      // 👇 এখানে toast show করো
       toast.success(res.data.message || "Login successful");
