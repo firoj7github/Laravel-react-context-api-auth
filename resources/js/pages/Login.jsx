@@ -27,7 +27,7 @@ export default function Login() {
                         <input
                             type="email"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onVolumeChange={(e)=> setEmail(e.target.value)}
                             className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
                             placeholder="Enter your email"
                         />
@@ -42,10 +42,11 @@ export default function Login() {
                         <label className="mb-1 block text-sm font-medium text-gray-700">
                             Password
                         </label>
+                        
                         <input
                             type="password"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(e)=> setPassword(e.target.value)}
                             className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
                             placeholder="Enter your password"
                         />
@@ -54,6 +55,7 @@ export default function Login() {
                                 {errors.password[0]}
                             </div>
                         )}
+                        
                     </div>
 
                     <button

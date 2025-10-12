@@ -14,11 +14,11 @@ export const AuthProvider = ({ children }) => {
   // ✅ refresh-এর পর localStorage থেকে user লোড করো
   
   useEffect(()=>{
-      const userStored = JSON.parse(localStorage.getItem("user"));
-      if(userStored){
-        setUser(userStored);
-      }
-  },[])
+    const userstored = JSON.parse(localStorage.getItem("user"));
+    if(userstored){
+      setUser(userstored);
+    }
+  },[]);
 
   const login = async (email, password) => {
     try {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
 const Navbar = () => {
@@ -7,6 +7,7 @@ const Navbar = () => {
     const { user } = useAuth();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+    const navigate = useNavigate();
 
     return (
         <nav className="bg-white shadow-md">
@@ -92,7 +93,7 @@ const Navbar = () => {
                                 }`}
                             >
                                 <button
-                                    onClick={() => alert("Go to Profile")}
+                                    onClick={() => navigate("/profile")}
                                     className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                                 >
                                     Profile
