@@ -27,7 +27,7 @@ export default function Login() {
                         <input
                             type="email"
                             value={email}
-                            onVolumeChange={(e)=> setEmail(e.target.value)}
+                            onChange={(e)=> setEmail(e.target.value)}
                             className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-200"
                             placeholder="Enter your email"
                         />

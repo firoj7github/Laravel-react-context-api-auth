@@ -34,13 +34,13 @@ if ($validate->fails()) {
         $user = Auth::user();
 
         // Create token via Passport
-        // $token = $user->createToken('Laravel Password Grant Client')->accessToken;
+        $token = $user->createToken('Laravel Password Grant Client')->accessToken;
 
         return response()->json([
             'status' => true,
             'message' => 'Login successful',
             'user' => $user,
-            // 'token'=>$token
+            'token'=>$token
            
         ]);
     } else {

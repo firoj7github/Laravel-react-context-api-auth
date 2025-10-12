@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
+import { setAuthToken } from "./api/api";
 
 const AuthContext = createContext();
 
@@ -10,6 +11,11 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [errors, setError] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem("token" || null));
+
+  useEffect(()=>{
+   setAuthToken(token);
+  }, [token]);
 
   // ✅ refresh-এর পর localStorage থেকে user লোড করো
   
@@ -27,7 +33,7 @@ export const AuthProvider = ({ children }) => {
       console.log(res);
       if (res.data.status) {
       setUser(res.data.user);
-      // localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", res.data.token);
       
       localStorage.setItem("user", JSON.stringify(res.data.user));
       
