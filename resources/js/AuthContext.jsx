@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
-import { setAuthToken } from "./api/api";
+import api, { setAuthToken } from "./api/api";
 
 const AuthContext = createContext();
 
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       setError(null);
-      const res = await axios.post("/user/login", { email, password });
+      const res = await api.post("/user/login", { email, password });
       console.log(res);
       if (res.data.status) {
       setUser(res.data.user);

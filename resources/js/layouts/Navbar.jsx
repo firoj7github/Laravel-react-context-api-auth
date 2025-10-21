@@ -67,15 +67,11 @@ const Navbar = () => {
                     <a href="/" className="text-gray-700 hover:text-blue-600">
                         Home
                     </a>
-                    <a href="#" className="text-gray-700 hover:text-blue-600">
-                        About
+                    
+                    <a href="/products" className="text-gray-700 hover:text-blue-600">
+                        Product
                     </a>
-                    <a href="#" className="text-gray-700 hover:text-blue-600">
-                        Services
-                    </a>
-                    <a href="#" className="text-gray-700 hover:text-blue-600">
-                        Contact
-                    </a>
+                    
                     {!user ? (
                         <Link
                             to="/login"
@@ -130,24 +126,14 @@ const Navbar = () => {
                         >
                             Home
                         </a>
+                        
                         <a
-                            href="#"
+                            href="/products"
                             className="block rounded px-3 py-2 text-gray-700 hover:bg-gray-100"
                         >
-                            About
+                            Product
                         </a>
-                        <a
-                            href="#"
-                            className="block rounded px-3 py-2 text-gray-700 hover:bg-gray-100"
-                        >
-                            Services
-                        </a>
-                        <a
-                            href="#"
-                            className="block rounded px-3 py-2 text-gray-700 hover:bg-gray-100"
-                        >
-                            Contact
-                        </a>
+                        
                         <button className="w-full rounded bg-blue-600 px-3 py-2 text-white hover:bg-blue-700">
                             Login
                         </button>
