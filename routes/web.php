@@ -23,8 +23,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get("/products", [ProductController::class, 'index']);
 
-Route::get('/{any}', function () {
-    return view('welcome'); // আপনার React root view
-})->where('any', '.*');
+// Route::get('/{any}', function () {
+//     return view('welcome'); // আপনার React root view
+// })->where('any', '.*');
+// Route::view('/{path?}', 'app')->where('path', '.*');
+Route::view('/{path?}', 'welcome')->where('path', '.*');
+
 
 require __DIR__.'/auth.php';

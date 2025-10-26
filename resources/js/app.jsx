@@ -6,6 +6,7 @@ import About from './pages/About';
 import Navbar from './layouts/Navbar';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Product from './pages/Product';
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/about" element={<About/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="/product" element={<Product/>}/>
            
         </Routes>
 
